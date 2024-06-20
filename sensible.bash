@@ -33,20 +33,6 @@ shopt -s globstar 2> /dev/null
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
-## SMARTER TAB-COMPLETION (Readline bindings) ##
-
-# Perform file completion in a case insensitive fashion
-bind "set completion-ignore-case on"
-
-# Treat hyphens and underscores as equivalent
-bind "set completion-map-case on"
-
-# Display matches for ambiguous patterns at first tab press
-bind "set show-all-if-ambiguous on"
-
-# Immediately add a trailing slash when autocompleting symlinks to directories
-bind "set mark-symlinked-directories on"
-
 ## SANE HISTORY DEFAULTS ##
 
 # Append to the history file, don't overwrite it
@@ -73,13 +59,6 @@ export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 # %T equivalent to %H:%M:%S (24-hours format)
 HISTTIMEFORMAT='%F %T '
 
-# Enable incremental history search with up/down arrows (also Readline goodness)
-# Learn more about this here: http://codeinthehole.com/writing/the-most-important-command-line-tip-incremental-history-searching-with-inputrc/
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-bind '"\e[C": forward-char'
-bind '"\e[D": backward-char'
-
 ## BETTER DIRECTORY NAVIGATION ##
 
 # Prepend cd to directory names automatically
@@ -103,4 +82,3 @@ shopt -s cdable_vars
 # export projects="$HOME/projects"
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
-
